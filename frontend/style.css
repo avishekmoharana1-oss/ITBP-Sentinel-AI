@@ -1,0 +1,41 @@
+/* Custom scrollbar for panels */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #1e293b; }
+::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* Map customization */
+.leaflet-popup-content-wrapper { background: rgba(15, 23, 42, 0.95) !important; border: 1px solid #334155; border-radius: 8px !important; color: white; }
+.leaflet-popup-tip { background: rgba(15, 23, 42, 0.95) !important; }
+
+/* Animation classes */
+.fade-in { animation: fadeIn 0.3s ease-in; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Threat level specific styles */
+.threat-indicator { position: relative; overflow: hidden; }
+.threat-indicator::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); animation: shimmer 2s infinite; }
+@keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+/* Glass morphism enhancement */
+.glass-panel { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) { .glass-panel { margin-bottom: 1rem; } }
+
+/* Military/Tactical font adjustments */
+.tactical-text { letter-spacing: 0.05em; text-transform: uppercase; }
+
+/* Heatmap overlay simulation */
+.heatmap-overlay { background: radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.3) 0%, transparent 70%); animation: heatmap-pulse 4s ease-in-out infinite; }
+@keyframes heatmap-pulse { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.1); } }
+
+/* Drone path animation */
+.drone-path { stroke-dasharray: 10; animation: dash 30s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -1000; } }
+
+.add-btn { background: #3b82f6; color: white; padding: 6px 14px; border: none; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600; transition: background 0.2s; }
+.add-btn:hover { background: #2563eb; }
+
+.delete-btn { background: #ef4444; color: white; padding: 3px 10px; border: none; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: 600; transition: background 0.2s; }
+.delete-btn:hover { background: #dc2626; }
